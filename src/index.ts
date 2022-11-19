@@ -10,11 +10,7 @@ import promptSync from 'prompt-sync'
 
 const prompt = promptSync()
 
-const DIAL_LETTERS = [
-  'ABC', 'DEF',
-  'GHI', 'JKL', 'MNO',
-  'PQRS', 'TUV', 'WXYZ'
-]
+const DIAL_LETTERS = ['ABC', 'DEF', 'GHI', 'JKL', 'MNO', 'PQRS', 'TUV', 'WXYZ']
 
 /**
  * The listMnemonics function.
@@ -26,8 +22,10 @@ const DIAL_LETTERS = [
  * @returns {string[]} list of all of the possible mnemonics.
  */
 function listMnemonics(
-  phoneNumber: String, currentMnemonic: String,
-  mnemonics: String[], index: number
+  phoneNumber: String,
+  currentMnemonic: String,
+  mnemonics: String[],
+  index: number
 ): String[] {
   if (currentMnemonic.length === phoneNumber.length) {
     mnemonics.push(currentMnemonic)
@@ -50,9 +48,7 @@ function listMnemonics(
 }
 
 console.log('Mnemonic Generator')
-console.log(
-  'The number must have digits from 2 to 9, inclusive\n'
-)
+console.log('The number must have digits from 2 to 9, inclusive\n')
 
 const phoneNumber = prompt('Enter a phone number: ')
 
